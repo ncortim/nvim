@@ -1,4 +1,3 @@
--- set leader key to space"West Europe"
 vim.g.mapleader = " "
 
 -- explore
@@ -68,3 +67,5 @@ vim.keymap.set("n", "<A-n>", ":bnext<cr>")
 -- enclose word between single or double quotes
 vim.keymap.set("n", "<leader>\'", "bi\'<C-c>ea\'<C-c>")
 vim.keymap.set("n", "<leader>\"", "bi\"<C-c>ea\"<C-c>")
+vim.keymap.set("v", "<leader>\'", "xi\'<C-c>pa\'<C-c>")
+vim.keymap.set("v", "<leader>\"", "xi\"<C-c>pa\"<C-c>")

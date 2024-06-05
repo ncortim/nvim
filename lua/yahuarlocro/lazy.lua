@@ -161,7 +161,18 @@ local plugins = {
 	{'akinsho/toggleterm.nvim', version = "*", config = true},
 
 	-- nvim tree
-	'nvim-tree/nvim-tree.lua'
+	'nvim-tree/nvim-tree.lua',
+
+	-- markdown preview
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
 
 
 }

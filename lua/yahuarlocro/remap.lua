@@ -1,4 +1,4 @@
--- set leader key to space
+-- set leader key to space"West Europe"
 vim.g.mapleader = " "
 
 -- explore
@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Nvimtree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
+-- vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -56,3 +56,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- comment line (toggle)
 -- vim.keymap.set("v", "<c-m>", "gcc")
+
+
+-- switch between buffers
+vim.keymap.set("n", "<A-p>", ":bprevious<cr>")
+vim.keymap.set("n", "<A-n>", ":bnext<cr>")

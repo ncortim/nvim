@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust", "python", "javascript", "php", "html", "css", "json5", "regex", "twig", "terraform", "yaml", "arduino", "help" },
+  ensure_installed = { "c", "lua", "rust", "python", "javascript", "php", "html", "css", "json5", "regex", "twig", "terraform", "yaml", "arduino", "help", "markdown" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -19,4 +19,8 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  context_commentstring = {
+      enable = true
+  }
 }

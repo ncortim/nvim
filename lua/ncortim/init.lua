@@ -1,3 +1,3 @@
-require("yahuarlocro.remap")
-require("yahuarlocro.set")
-require("yahuarlocro.lazy")
+require("ncortim.remap")
+require("ncortim.set")
+require("ncortim.lazy")

@@ -63,3 +63,8 @@ vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<cr>")
 -- switch between buffers
 vim.keymap.set("n", "<A-p>", ":bprevious<cr>")
 vim.keymap.set("n", "<A-n>", ":bnext<cr>")
+
+
+-- enclose word between single or double quotes
+vim.keymap.set("n", "<leader>\'", "bi\'<C-c>ea\'<C-c>")
+vim.keymap.set("n", "<leader>\"", "bi\"<C-c>ea\"<C-c>")

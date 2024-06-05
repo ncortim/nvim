@@ -1,71 +1,59 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-    -- using packer.nvim
-    -- using packer.nvim
+-- using packer.nvim
+-- using packer.nvim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- telescope finder
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    -- telescope finder
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-  -- onedark theme
-  use 'navarasu/onedark.nvim'
+    -- onedark theme
+    use 'navarasu/onedark.nvim'
 
-  -- treesitter
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- treesitter language highlighting
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  -- harpoon
-  use('theprimeagen/harpoon')
+    -- harpoon latest files switcher
+    use('theprimeagen/harpoon')
 
-  -- undotree
-  use('mbbill/undotree')
+    -- undotree to move back and forth between undos and redos
+    use('mbbill/undotree')
 
-  -- fugitive
-  use('tpope/vim-fugitive')
+    -- fugitive for git integration
+    use('tpope/vim-fugitive')
 
-  -- lsp zero
-  use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v1.x',
-      requires = {
-          -- LSP Support
-          {'neovim/nvim-lspconfig'},             -- Required
-          {'williamboman/mason.nvim'},           -- Optional
-          {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    -- lsp zero - language server protocol
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {'williamboman/mason.nvim'},           -- Optional
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-          -- Autocompletion
-          {'hrsh7th/nvim-cmp'},         -- Required
-          {'hrsh7th/cmp-nvim-lsp'},     -- Required
-          {'hrsh7th/cmp-buffer'},       -- Optional
-          {'hrsh7th/cmp-path'},         -- Optional
-          {'saadparwaiz1/cmp_luasnip'}, -- Optional
-          {'hrsh7th/cmp-nvim-lua'},     -- Optional
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},         -- Required
+            {'hrsh7th/cmp-nvim-lsp'},     -- Required
+            {'hrsh7th/cmp-buffer'},       -- Optional
+            {'hrsh7th/cmp-path'},         -- Optional
+            {'saadparwaiz1/cmp_luasnip'}, -- Optional
+            {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
-          -- Snippets
-          {'L3MON4D3/LuaSnip'},             -- Required
-          {'rafamadriz/friendly-snippets'}, -- Optional
-      }
-  }
-
---  -- nvim tree
---  use {
---      'nvim-tree/nvim-tree.lua',
---      requires = {
---          'nvim-tree/nvim-web-devicons', -- optional, for file icons
---      },
---      tag = 'nightly' -- optional, updated every week. (see issue #1193)
---  }
---
-    -- devicons for nvim tree
-    use 'nvim-tree/nvim-web-devicons'
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},             -- Required
+            {'rafamadriz/friendly-snippets'}, -- Optional
+        }
+    }
 
     -- gitsigns
     use {
@@ -79,27 +67,17 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
---    -- comment string 
---    use 'JoosepAlviste/nvim-ts-context-commentstring'
-
-    -- toggle terminal
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end}
-
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- bufferline
-    --use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-
-    -- code outline
-    --use {
-    --  'stevearc/aerial.nvim',
-    --  config = function() require('aerial').setup() end
-    --}
-
+    -- comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)

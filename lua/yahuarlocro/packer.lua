@@ -67,10 +67,15 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- web dev icons
+    use 'nvim-tree/nvim-web-devicons'
+
     -- lualine
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        -- requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        -- requires = { 'nvim-tree/nvim-web-devicons'}
     }
 
     -- comment

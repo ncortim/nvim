@@ -69,3 +69,6 @@ vim.keymap.set("n", "<leader>\'", "bi\'<C-c>ea\'<C-c>")
 vim.keymap.set("n", "<leader>\"", "bi\"<C-c>ea\"<C-c>")
 vim.keymap.set("v", "<leader>\'", "xi\'<C-c>pa\'<C-c>")
 vim.keymap.set("v", "<leader>\"", "xi\"<C-c>pa\"<C-c>")
+
+-- select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")

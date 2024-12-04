@@ -54,21 +54,24 @@ vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<cr>")
 -- vim.keymap.set("n", "<C-k>", "<C-w>k")
 -- vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-
 -- comment line (toggle)
 -- vim.keymap.set("v", "<c-m>", "gcc")
-
 
 -- switch between buffers
 vim.keymap.set("n", "<A-p>", ":bprevious<cr>")
 vim.keymap.set("n", "<A-n>", ":bnext<cr>")
 
-
 -- enclose word between single or double quotes
-vim.keymap.set("n", "<leader>\'", "bi\'<C-c>ea\'<C-c>")
-vim.keymap.set("n", "<leader>\"", "bi\"<C-c>ea\"<C-c>")
-vim.keymap.set("v", "<leader>\'", "xi\'<C-c>pa\'<C-c>")
-vim.keymap.set("v", "<leader>\"", "xi\"<C-c>pa\"<C-c>")
+vim.keymap.set("n", "<leader>'", "bi'<C-c>ea'<C-c>")
+vim.keymap.set("n", '<leader>"', 'bi"<C-c>ea"<C-c>')
+vim.keymap.set("v", "<leader>'", "xi'<C-c>pa'<C-c>")
+vim.keymap.set("v", '<leader>"', 'xi"<C-c>pa"<C-c>')
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- treesitter diagnostic remaps
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })

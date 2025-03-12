@@ -5,7 +5,7 @@ local keymap = vim.keymap
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = "Remove search in highlights" })
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search in highlights" })
 
 -- move lines around when highlighted
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line in visual mode down" })
@@ -50,17 +50,17 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 keymap.set("n", "<leader>x", "<cmd>!chmod 700 %<CR>", { silent = true })
 
 -- Nvimtree
-keymap.set("n", "<leader>n", ":NvimTreeToggle<cr>", { desc = "Toggle [N]vimTree" })
+-- keymap.set("n", "<leader>n", ":NvimTreeToggle<cr>", { desc = "Toggle [N]vimTree" })
 -- keymap.set("n", "<leader>m", ":NvimTreeFocus<cr>")
-keymap.set("n", "<C-m>", ":NvimTreeFocus<cr>")
+-- keymap.set("n", "<C-m>", ":NvimTreeFocus<cr>")
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- Better window navigation
 --  See `:help wincmd` for a list of all window commands
-keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 --
 -- Better window splitting
 keymap.set("n", "<leader>wv", ":vsplit<cr>", { desc = "[W]indow Split [V]ertical" })

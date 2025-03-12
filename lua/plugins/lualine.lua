@@ -1,5 +1,6 @@
-require("lualine").setup({
-	options = {
+return { -- Autoformat
+	"nvim-lualine/lualine.nvim",
+	opts = {
 		icons_enabled = true,
 		theme = "onedark",
 		-- component_separators = { left = '', right = ''},
@@ -39,4 +40,4 @@ require("lualine").setup({
 	winbar = {},
 	inactive_winbar = {},
 	extensions = {},
-})
+}

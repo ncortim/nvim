@@ -52,7 +52,21 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			--   mappings = {
 			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 			--   },
+			-- hidden = true,
+			-- no_ignore = true,
 			-- },
+			pickers = {
+				find_files = {
+					hidden = true,
+					no_ignore = true,
+					file_ignore_patterns = {
+						"node_modules",
+						".ruff_cache",
+						".git/",
+						".mypy_cache",
+					},
+				},
+			},
 			-- pickers = {}
 			extensions = {
 				["ui-select"] = {

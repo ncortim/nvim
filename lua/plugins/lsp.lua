@@ -6,7 +6,7 @@ return {
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		-- Mason must be loaded before its dependents so we need to set it up here.
 		-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-		{ "williamboman/mason.nvim", opts = {} },
+		{ "williamboman/mason.nvim", opts = { "java-debug-adapter", "java-test", "jdtls" } },
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
@@ -15,6 +15,17 @@ return {
 
 		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
+	},
+	opts = {
+		-- make sure mason installs the server
+		servers = {
+			jdtls = {},
+		},
+		setup = {
+			jdtls = function()
+				return true -- avoid duplicate servers
+			end,
+		},
 	},
 	config = function()
 		-- Brief aside: **What is LSP?**
